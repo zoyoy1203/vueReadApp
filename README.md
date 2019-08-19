@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue-reading
 
 > A Vue.js project
@@ -19,3 +20,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# vueReadApp
+>>>>>>> 85c5185efa8508b8e02c0334f6a2293c357976aa
