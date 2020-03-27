@@ -14,7 +14,7 @@ import './assets/styles/material-icons.css'
 Vue.use(Mui) // 监听手机返回键
 Vue.use(MintUI) // 两个ui框架
 Vue.use(MuseUI)
-Vue.use(axios)
+Vue.prototype.axios = axios
 Vue.prototype.axios = axios
 Vue.config.productionTip = false
 
