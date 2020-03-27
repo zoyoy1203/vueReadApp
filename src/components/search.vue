@@ -12,7 +12,7 @@
       <div style="margin: 10px 0px">
         <h1>热门搜索</h1>
       </div>
-				<li class="search-hotwords" :style="bgcolor[index]" v-for="(item,index) in hotwords">
+				<li class="search-hotwords" :style="bgcolor[index]" v-for="(item,index) in hotwords" :key="index">
 					<a @click="tags(item.word)" href="javascript:">{{ item.word}}</a>
 				</li>
 		</ul>

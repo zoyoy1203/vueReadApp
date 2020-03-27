@@ -2,12 +2,14 @@
 		<div class="book-about">
 			<h3>相关推荐</h3>
 			<ul class="book-about-box">
-				<li v-for="(book,key) in recommend" v-if="key<3">
-					<router-link :to="'/bookinfo/'+book._id">
+				<template v-for="(book,key) in recommend">
+					<li v-if="key<3" :key="key">
+						<router-link :to="'/bookinfo/'+book._id">
 						<img v-lazy="book.cover">
 						<p>{{book.title}}</p>
-					</router-link>
-				</li>
+						</router-link>
+					</li>
+				</template>
 			</ul>
 		</div>
 </template>

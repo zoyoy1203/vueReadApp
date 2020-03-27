@@ -4,25 +4,36 @@
     <div class="book-rank-list">
       <ul class="book-rank-detail">
         <h1>男生</h1>
-        <li  class="book-rank-item" v-for="(rank,index) in ranklist.male"v-if="index<7">
-          <img :src="rank.cover">
-          <a href="javascript:" @click="golist(rank)">{{rank.title}}</a>
-        </li>
+        <template v-for="(rank,index) in ranklist.male">
+          <li class="book-rank-item" :key="index" v-if="index<7">
+            <img :src="rank.cover">
+            <a href="javascript:" @click="golist(rank)">{{rank.title}}</a>
+          </li>
+        </template>
+
         <li @click="ShowmaleCollapse" class="book-rank-item book-rank-others"><a href="javascript:">其他排行榜</a></li>
-        <li v-show="ismaleCollapse" class="book-rank-item" v-for="(rank,index) in ranklist.male" v-if="index>7">
-          <a href="javascript:"  @click="golist(rank)">{{rank.title}}</a>
-        </li>
+        <template v-for="(rank,index) in ranklist.male">
+          <li v-show="ismaleCollapse" class="book-rank-item" :key="index"  v-if="index>7">
+            <a href="javascript:"  @click="golist(rank)">{{rank.title}}</a>
+          </li>
+        </template>
+
       </ul>
       <ul class="book-rank-detail">
         <h1>女生</h1>
-        <li  class="book-rank-item" v-for="(rank,index) in ranklist.female"v-if="index<7">
-          <img :src="rank.cover">
-          <a  href="javascript:" @click="golist(rank)">{{rank.title}}</a>
-        </li>
+        <template  v-for="(rank,index) in ranklist.female" >
+          <li  class="book-rank-item" :key="index" v-if="index<7">
+            <img :src="rank.cover">
+            <a  href="javascript:" @click="golist(rank)">{{rank.title}}</a>
+          </li>
+        </template>
         <li @click="ShowfemaleCollapse" class="book-rank-item book-rank-others"><a href="javascript:">其他排行榜</a></li>
-        <li v-show="isfemaleCollapse" class="book-rank-item" v-for="(rank,index) in ranklist.female" v-if="index>7">
-          <a href="javascript:"  @click="golist(rank)">{{rank.title}}</a>
-        </li>
+        <template v-for="(rank,index) in ranklist.female" >
+          <li v-show="isfemaleCollapse" class="book-rank-item" :key="index" v-if="index>7">
+            <a href="javascript:"  @click="golist(rank)">{{rank.title}}</a>
+          </li>
+        </template>
+
       </ul>
     </div>
   </div>

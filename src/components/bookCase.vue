@@ -6,7 +6,7 @@
       </div>-->
       <p class="myfollow-book-msg" v-show="nobook">书架空空如也，点击发现</p>
       <ul class="myfollow-book-list">
-        <li class="myfollow-book-item" v-for="(book,key) in followbook">
+        <li class="myfollow-book-item" v-for="(book,key) in followbook" :key="key">
           <a @click="readbook(key)" @touchstart="ontouchstart(key)" @touchmove="ontouchmove" @touchend="ontouchend"><img v-lazy="book.cover">
             <p>{{book.title}}</p></a>
         </li>

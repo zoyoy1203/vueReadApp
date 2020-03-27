@@ -1,7 +1,7 @@
 <template>
 		<div id="reader-page-view" class="reader-content-box" :style='bkcolor' ref="readerview">
 			<h3 class="reader-title">{{ Title }}</h3>
-			<p class="reader-content" v-for="text in Content">{{text.trim()}}</p>
+			<p class="reader-content" v-for="(text,index) in Content" :key="index">{{text.trim()}}</p>
 		</div>
 </template>
 <script type="text/javascript">

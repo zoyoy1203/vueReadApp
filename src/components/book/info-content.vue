@@ -25,7 +25,9 @@
     </a></p>
   </div>
   <div class="info-tags">
-    <span v-for='(tag,key) in book.tags' :key="key" v-if='key<5'>{{ tag }}</span>
+    <template  v-for='(tag,key) in book.tags'>
+      <span :key="key" v-if='key<5'>{{ tag }}</span>
+    </template>
   </div>
 </div>
 

@@ -4,32 +4,37 @@
 			<h3>本周推荐</h3>
 		</div>
 		<ul class="index-newbook-rank">
-			<li class="fix" v-for="(books,index) in newslist" v-if="index==0" :key="books._id">
-				<router-link :to="'/bookinfo/'+books._id">
-					<div class="book-cover-box">
-						<div class="book-number">{{index+1}}</div>
-						<img class="book-cover" :src="books.cover">
-					</div>
-					<div class="book-info">
-						<p class="book-title">
-							{{books.title}}
-						</p>
-						<p class="book-author">{{books.author}}</p>
-						<p class="book-content">
-							{{books.shortIntro}}
-						</p>
-						<ul class="book-tags fix">
-							<li>{{books.majorCate}}</li>
-							<li v-show="(books.minorCate!='')">{{books.minorCate}}</li>
-						</ul>
-					</div>
+			<template v-for="(books,index) in newslist" >
+				<li class="fix" v-if="index==0" :key="books._id">
+					<router-link :to="'/bookinfo/'+books._id">
+						<div class="book-cover-box">
+							<div class="book-number">{{index+1}}</div>
+							<img class="book-cover" :src="books.cover">
+						</div>
+						<div class="book-info">
+							<p class="book-title">
+								{{books.title}}
+							</p>
+							<p class="book-author">{{books.author}}</p>
+							<p class="book-content">
+								{{books.shortIntro}}
+							</p>
+							<ul class="book-tags fix">
+								<li>{{books.majorCate}}</li>
+								<li v-show="(books.minorCate!='')">{{books.minorCate}}</li>
+							</ul>
+						</div>
+					</router-link>
+				</li>
+			</template>
+			<template v-for="(books,index) in newslist">
+				<router-link :to="'/bookinfo/'+books._id" tag='li' class="index-newbook-next"   v-if="index>0" :key="books._id">
+					<span>{{index+1}}</span>
+					<span>{{books.title}}</span>
+					<span>{{books.author}}</span>
 				</router-link>
-			</li>
-			<router-link :to="'/bookinfo/'+books._id" tag='li' class="index-newbook-next"  v-for="(books,index) in newslist" v-if="index>0" :key="books._id">
-				<span>{{index+1}}</span>
-				<span>{{books.title}}</span>
-				<span>{{books.author}}</span>
-			</router-link>
+			</template>
+
 		</ul>
 	</div>
 </template>

@@ -4,7 +4,7 @@
       <h3>女生推荐</h3>
     </div>
     <ul class="index-male-rank">
-      <li class="fix" v-for="(books,key) in femalelist">
+      <li class="fix" v-for="(books,key) in femalelist" :key="key">
         <router-link :to="'/bookinfo/'+books._id">
           <div class="book-cover-box">
             <img v-lazy="books.cover" class="book-cover" :title="books.title">

@@ -3,7 +3,7 @@
 	<div class="male-category">
 		<h1 class="category-title">男生</h1>
 		<ul class="category-list">
-			<li v-for="(list,index) in maleCategory" class="category-list-item">
+			<li v-for="(list,index) in maleCategory" class="category-list-item" :key="index">
         <mu-row @click="golist(list)">
           <mu-col span="6" ><div class="imgbox"><img :src="Imageurl(index)"   /></div></mu-col>
           <mu-col span="6">

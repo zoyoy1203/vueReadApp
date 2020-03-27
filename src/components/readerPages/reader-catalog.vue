@@ -7,10 +7,10 @@
 				<p v-show="this.$store.state.isShowCatlog" class="catlog-reverse" @click="toChapter">章节跳跃</p>
 		</div>
 		<ul id="test" v-show="this.$store.state.isShowCatlog" class="book-catalog">
-			<a @click="changeChapter(index)" href="javascript:"  v-for='(list,index) in catlog'><li class="catalog-lists">{{list.title}}</li></a>
+			<a @click="changeChapter(index)" href="javascript:"  v-for='(list,index) in catlog' :key="index"><li class="catalog-lists">{{list.title}}</li></a>
 		</ul>
 		<ul v-show="this.$store.state.isShowSource" class="book-catalog">
-			<a @click="changeSource(list._id)" href="javascript:"  v-for='(list,index) in sources'>
+			<a @click="changeSource(list._id)" href="javascript:"  v-for='(list,index) in sources' :key="index">
 				<li class="catalog-lists"><p>{{list.name}}</p>最后更新：{{list.lastChapter}}</li>
 			</a>
 		</ul>

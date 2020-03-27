@@ -6,7 +6,7 @@
 				<!--<i class="iconfont icon-fanhui2 icon-reader-back" ></i>-->
 		</div>
 		<div  v-show="isMenuShow" class="reader-menu-bottom fix">
-			<a @click="showcatlog"  class="reader-menu-tabs reader-menu-toc" href="javascript:"><mu-icon  class="reader-icon-tabs"value="book">目录</mu-icon></a>
+			<a @click="showcatlog"  class="reader-menu-tabs reader-menu-toc" href="javascript:"><mu-icon  class="reader-icon-tabs" value="book">目录</mu-icon></a>
 			<a @click="fontmenu" class="reader-menu-tabs reader-menu-font" href="javascript:"><mu-icon class="reader-icon-tabs" value="settings">设置</mu-icon></a>
 			<a @click="showsources" class="reader-menu-tabs reader-menu-source" href="javascript:"><mu-icon class="reader-icon-tabs" value="language">换源</mu-icon></a>
 			<a @click="nightmode" class="reader-menu-tabs reader-menu-night" href="javascript:"><mu-icon class="reader-icon-tabs " :value="isnighticon">日/夜</mu-icon></a>
@@ -18,15 +18,15 @@
             :max="24"
             :step="2"
             :bar-height="1">
-            <div slot="start">1&nbsp</div>
-            <div slot="end">&nbsp6</div>
+            <div slot="start">1&nbsp;</div>
+            <div slot="end">&nbsp;</div>
           </mt-range>
         </div>
         <ul class="reader-font-box">
-        <li v-for="(Font,index) in font"  class="fontbtn" :class="[{buttonfocus:isactivefont[index]}]" @click="fontchange(Font.fontvalue,index)"  :style="{fontFamily:Font.fontvalue}">{{Font.name}}</li>
+        <li v-for="(Font,index) in font" :key="index"  class="fontbtn" :class="[{buttonfocus:isactivefont[index]}]" @click="fontchange(Font.fontvalue,index)"  :style="{fontFamily:Font.fontvalue}">{{Font.name}}</li>
         </ul>
         <ul class="reader-font-bg">
-          <li :class="{readerFontBgActive:isactive[index]}" @click="bgchange(color,index)" :style="{backgroundColor:color}" v-for="(color,index) in colors">
+          <li :class="{readerFontBgActive:isactive[index]}" :key="index" @click="bgchange(color,index)" :style="{backgroundColor:color}" v-for="(color,index) in colors">
           </li>
         </ul>
 			</div>
